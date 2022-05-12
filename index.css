@@ -1,6 +1,6 @@
 :root {
   --part1-percentage: 0%;
-  --part2-percentage: 0px;
+  --part2-percentage: 0%;
   --part2-percentage-opacity: 0%;
   --part3-percentage: 0%;
   --part4-percentage: 0%;
@@ -38,17 +38,15 @@ body {
   align-items: center;
 }
 
-.part1 {
+.part {
   background-color: #000;
   margin: 0;
   height: 400vh;
 }
 
 #part1-text {
-  font-family: Helvetica;
   margin: 0;
   padding: 0;
-  font-size: 48px;
   color: #fff;
   letter-spacing: -0.3px;
   background-image: linear-gradient(
@@ -65,12 +63,6 @@ body {
   color: transparent;
 }
 
-.part2 {
-  background-color: #fff;
-  margin: 0;
-  height: 400vh;
-}
-
 #part2-laputa {
   position: relative;
   background-color: red;
@@ -79,16 +71,9 @@ body {
 #part2-text {
   position: absolute;
   color: rgba(255, 255, 255, 1);
-  font-size: 64px;
   top: 10%;
   opacity: var(--part2-percentage-opacity);
   transform: translateX(var(--part2-percentage));
-}
-
-.part3 {
-  background-color: #fff;
-  margin: 0;
-  height: 400vh;
 }
 
 #part3-stone {
@@ -97,10 +82,8 @@ body {
 }
 
 #part3-text {
-  font-family: Helvetica;
   margin: 0;
   padding: 0;
-  font-size: 48px;
   color: #e9ffea;
   letter-spacing: -0.3px;
   background-image: linear-gradient(
@@ -116,15 +99,8 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   position: absolute;
-  font-size: 72px;
   bottom: 12%;
   left: 5%;
-}
-
-.part4 {
-  background-color: #fff;
-  margin: 0;
-  height: 400vh;
 }
 
 #part4-castle {
@@ -133,10 +109,8 @@ body {
 }
 
 #part4-text {
-  font-family: Helvetica;
   margin: 0;
   padding: 0;
-  font-size: 48px;
   color: #fff;
   letter-spacing: -0.3px;
   background-image: linear-gradient(
@@ -152,47 +126,14 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   position: absolute;
-  font-size: 72px;
   bottom: 12%;
   left: 5%;
 }
 
-.shell {
-  height: 100vh;
-  overflow-x: hidden;
-  perspective: 3px;
-}
-
-.shell div {
-  position: relative;
-}
-.image {
-  transform: translateZ(-1px) scale(1.6);
-  background-size: cover;
-  height: 100vh;
-  z-index: -1;
-}
-
-.heading {
-  z-index: -1;
-  transform: translateY(-35vh) translateZ(1px);
-  color: #fff;
-  font-size: 30px;
-}
-
-.part5 {
-  background-color: #fff;
-  margin: 0;
-  height: 400vh;
-}
-
 .parallax-window {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+}
 
-  .title {
-    color: white
-  }

@@ -18,12 +18,24 @@ const calScrolled = (partIndex) => {
   return scrolled
 }
 
+const drawImageScaled = (img, ctx) => {
+   var canvas = ctx.canvas ;
+   var hRatio = canvas.width  / img.width    ;
+   var vRatio =  canvas.height / img.height  ;
+   var ratio  = Math.max ( hRatio, vRatio );
+   var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+   var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
+   ctx.clearRect(0,0,canvas.width, canvas.height);
+   ctx.drawImage(img, 0,0, img.width, img.height,
+                      centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+}
+
 const changeFrame = (frame, start, end, contextId, images) => {
   let index = frame
   if (index < start) index = start
   if (index > end) index = end
   let context = $(contextId)[0].getContext('2d')
-  context.drawImage(images[index], 0, 0, bw, bh)
+  drawImageScaled(images[index],context)
 }
 
 // part1
@@ -46,15 +58,15 @@ loader.addCompletionListener(function () {
   context.canvas.height = bh
   context.canvas.width = bw
   $('body').addClass('loaded')
-  context.drawImage(part2Images[0], 0, 0, bw, bh)
+  drawImageScaled(part2Images[0], context)
 })
 loader.start()
 
 document.addEventListener("scroll", (e) => {
   let scrolled = calScrolled(2)
   let frame = Math.ceil(scrolled * 99)
-  if (frame < 80) {
-    part2Text.style.setProperty("--part2-percentage", `${scrolled * 700 - 1000}px`);
+  if (frame < 80 && frame > 0) {
+    part2Text.style.setProperty("--part2-percentage", `${scrolled * 60 - 20}vh`);
     part2Text.style.setProperty("--part2-percentage-opacity", `${scrolled * 100}%`);
   }
   if (frame < 99 & frame > 0) changeFrame(frame, 0, 99, '#part2-laputa', part2Images)
@@ -73,7 +85,7 @@ loader.addCompletionListener(function () {
   context.canvas.height = bh
   context.canvas.width = bw
   $('body').addClass('loaded')
-  context.drawImage(part3Images[0], 0, 0, bw, bh)
+  drawImageScaled(part3Images[0], context)
 })
 loader.start()
 
@@ -101,7 +113,7 @@ loader.addCompletionListener(function () {
   context.canvas.height = bh
   context.canvas.width = bw
   $('body').addClass('loaded')
-  context.drawImage(part4Images[0], 0, 0, bw, bh)
+  drawImageScaled(part4Images[0], context)
 })
 loader.start()
 
