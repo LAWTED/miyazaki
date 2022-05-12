@@ -41,7 +41,7 @@ body {
 .part {
   background-color: #000;
   margin: 0;
-  height: 400vh;
+  height: 360vh;
 }
 
 #part1-text {
@@ -137,3 +137,6 @@ body {
   height: 120vh;
 }
 
+.small-part {
+  height: 120vh;
+}

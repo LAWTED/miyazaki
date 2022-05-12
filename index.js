@@ -12,7 +12,7 @@ var clientH = window.innerHeight || document.documentElement.clientHeight
 // utils
 const calScrolled = (partIndex) => {
   let validH = totalH / totalPartsNum - clientH
-  let scrollH = document.documentElement.scrollTop - clientH * 4 * (partIndex - 1)
+  let scrollH = document.documentElement.scrollTop - clientH * 3.6 * (partIndex - 1)
   let scrolled =  scrollH / validH
   if (0 > scrolled || scrolled > 1) return;
   return scrolled
