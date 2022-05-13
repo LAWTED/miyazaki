@@ -10,24 +10,26 @@ var totalH = document.body.scrollHeight || document.documentElement.scrollHeight
 var clientH = window.innerHeight || document.documentElement.clientHeight
 
 // utils
+new CardMove('.card-item');
+
 const calScrolled = (partIndex) => {
   let validH = totalH / totalPartsNum - clientH
   let scrollH = document.documentElement.scrollTop - clientH * 3.6 * (partIndex - 1)
-  let scrolled =  scrollH / validH
+  let scrolled = scrollH / validH
   if (0 > scrolled || scrolled > 1) return;
   return scrolled
 }
 
 const drawImageScaled = (img, ctx) => {
-   var canvas = ctx.canvas ;
-   var hRatio = canvas.width  / img.width    ;
-   var vRatio =  canvas.height / img.height  ;
-   var ratio  = Math.max ( hRatio, vRatio );
-   var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
-   var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
-   ctx.clearRect(0,0,canvas.width, canvas.height);
-   ctx.drawImage(img, 0,0, img.width, img.height,
-                      centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+  var canvas = ctx.canvas;
+  var hRatio = canvas.width / img.width;
+  var vRatio = canvas.height / img.height;
+  var ratio = Math.max(hRatio, vRatio);
+  var centerShift_x = (canvas.width - img.width * ratio) / 2;
+  var centerShift_y = (canvas.height - img.height * ratio) / 2;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0, img.width, img.height,
+    centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
 }
 
 const changeFrame = (frame, start, end, contextId, images) => {
@@ -35,7 +37,7 @@ const changeFrame = (frame, start, end, contextId, images) => {
   if (index < start) index = start
   if (index > end) index = end
   let context = $(contextId)[0].getContext('2d')
-  drawImageScaled(images[index],context)
+  drawImageScaled(images[index], context)
 }
 
 // part1

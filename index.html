@@ -15,44 +15,55 @@
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="index.js" defer></script>
+  <script src="dist/cardmove.min.js"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-gradient {
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  </style>
 </head>
 
 
 <body class="font-mono">
-  <div class="part">
-    <div class="sticky">
-      <h1 id="part1-text" class="font-bold text-7xl">Hayao Miyazaki</h1>
+  <div>
+    <div class="part">
+      <div class="sticky">
+        <h1 id="part1-text" class="font-bold text-7xl">Hayao Miyazaki</h1>
+      </div>
     </div>
-  </div>
-  <div class="part">
-    <div class="sticky">
-      <canvas id="part2-laputa"></canvas>
-      <h1 id="part2-text" class="font-bold text-7xl	"> Castle In The Sky </h1>
+    <div class="part">
+      <div class="sticky">
+        <canvas id="part2-laputa"></canvas>
+        <h1 id="part2-text" class="font-bold text-7xl	overflow-hidden"> Castle In The Sky </h1>
+      </div>
     </div>
-  </div>
-  <div class="part">
-    <div class="sticky">
-      <canvas id="part3-stone"></canvas>
-      <h2 id="part3-text" class="font-bold text-7xl	"> A young boy and<br /> A girl with a magic crystal </h2>
+    <div class="part">
+      <div class="sticky">
+        <canvas id="part3-stone"></canvas>
+        <h2 id="part3-text" class="font-bold text-7xl	"> A young boy and<br /> A girl with a magic crystal </h2>
+      </div>
     </div>
-  </div>
-  <div class="part">
-    <div class="sticky">
-      <canvas id="part4-castle"></canvas>
-      <h2 id="part4-text" class="font-bold text-7xl	text-opacity-20	"> They search for<br /> A legendary floating castle
-      </h2>
-
+    <div class="part">
+      <div class="sticky">
+        <canvas id="part4-castle"></canvas>
+        <h2 id="part4-text" class="font-bold text-7xl	text-opacity-20	"> They search for<br /> A legendary floating
+          castle
+        </h2>
+      </div>
     </div>
-  </div>
   </div>
   <!-- IMDb -->
-
-
   <div class="parallax-window" data-parallax="scroll" data-image-src="./assets/Sky_img/fly_Trim_Trim_Moment.jpg">
   </div>
-  <div class="h-screen flex justify-center items-center realative bg-white">
+  <div class="slide" id="story">
     <!-- IMDb page -->
     <div class="flex flex-col	w-4/5">
+      <span
+        class="text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500">
+        Castle in The Sky</span>
       <span class="text-7xl text-black flex flex-row mb-4">
         <p>In</p>
         <div class="flex items-center m-4 h-full w-24 shadow-yellow-500/50 shadow-lg">
@@ -128,7 +139,7 @@
           </div>
         </div>
         <div
-          class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80 rounded-lg flex flex-col w-1/2 md:2/3">
+          class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80 rounded-lg flex flex-col w-1/2 ">
           <div id="inf-list" class="m-4">
             <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
               <span class="text-xl text-bold text-white ">Director</span>
@@ -159,7 +170,7 @@
     </div>
   </div>
   <!-- Comments -->
-  <div class="parallax-window" data-parallax="scroll" data-image-src="./assets/Sky_img/laputa_Trim_Moment.jpg">
+  <div class="parallax-window test" data-parallax="scroll" data-image-src="./assets/Sky_img/laputa_Trim_Moment.jpg">
     <!-- Comments page -->
     <div class="flex flex-col	w-4/5">
       <span class="text-7xl text-white flex flex-row mb-4">
@@ -207,171 +218,469 @@
     <video src="assets/Valley_img/p1.mp4" width="100%" muted loop autoplay></video>
     <h1 class="text-7xl bottom-10 text-white absolute ml-8">Nausicaa of the Valley of the Wind</h1>
   </div>
-  <!-- ljc work -->
-  <div class="parallax-window bg-white" data-parallax="scroll" data-image-src="">
-    <!-- IMDb page with Plot-->
-    <div class="flex flex-row w-4/5">
-      <div class="flex flex-col basis-2/3">
-        <span class="text-7xl text-black flex flex-row mb-4 items-center">
-          <p>In</p>
-          <div class="flex items-center m-4 h-full w-24 ">
-            <svg id="home_img" class="hover:shadow-yellow-500/50 hover:shadow-lg transition-all"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" version="1.1">
-              <g fill="#F5C518">
-                <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
-              </g>
-              <g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero">
-                <polygon points="0 18 5 18 5 0 0 0"></polygon>
-                <path
-                  d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z">
-                </path>
-                <path
-                  d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z">
-                </path>
-                <path
-                  d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z">
-                </path>
-              </g>
-            </svg>
-          </div>
-          <p>...</p>
-        </span>
+  <div class="parallax-window relative" data-parallax="scroll" data-image-src="./assets/Valley_img/1-1.png"
+    data-speed="-0.1">
+    <h1
+      class="absolute bottom-20 text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500">
+      Heading</h1>
+  </div>
+  <!-- story background -->
+  <div class="slide" id="story">
+    <div class="w-4/5">
+      <span class="text-7xl text-black flex flex-row mb-4">
+        <p>Story Background </p>
+      </span>
+      <div class="grid gap-4 grid-cols-2 ">
         <div class="">
-          <div
-            class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80	 rounded-lg	flex flex-row my-8 max-h-24 w-fit">
-            <div id="IMDb-ratingBox" class="font-xs font-semibold	text-white m-2">
-              <p>IMDb RATING</p>
-              <div class="flex h-12">
-                <div class="flex items-center w-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-full text-yellow-300" viewBox="0 0 24 24"
-                    fill="currentColor" role="presentation">
-                    <path
-                      d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z">
-                    </path>
-                  </svg>
-                </div>
-                <div class="inline-flex flex-col items-start	">
-                  <span class="text-xl font-semibold">8.0
-                    <span>/
-                      <span class="text-gray-200">10</span>
+          <h1 class="text-2xl mb-2">
+            A delightful, touching, timeless classic!
+          </h1>
+          <p class="text-ellipsis text-neutral-600">
+            A thousand years ago, the highly developed human civilization polluted the entire earth and created a
+            terrifying weapon called the "Giant God Soldier", constantly waging wars and plundering. Eventually
+            destroyed
+            by the "Seven Days' Fire" caused by giant war robots, it buried its own civilization.
+            The polluted earth has grown a forest called the "Sea of Decay", which continues to grow, giving birth to
+            deadly plants and fungi that can emit miasma. Miasma can kill humans in a matter of minutes, and people can
+            only survive by wearing gas masks at all times.
+          </p>
+        </div>
+        <div class="card-item " data-card-angle="5" data-card-perspective="500">
+          <div class="card-content">
+            <img src="assets/Valley_img/1-1-1.png" alt=""
+              class="object-cover rounded-lg transition-all drop-shadow-2xl rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-window" data-parallax="scroll" data-image-src="./assets/Valley_img/1-2.png">
+  </div>
+  <!-- IMDb page with Plot-->
+  <div class="slide" id="imdb">
+    <div class=" w-4/5">
+      <span
+        class="text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500">
+        Castle in The Sky</span>
+      <div class="flex flex-row">
+        <div class="flex flex-col basis-2/3">
+          <span class="text-7xl text-black flex flex-row mb-4 items-center">
+            <p>In</p>
+            <div class="flex items-center m-4 h-full w-24 ">
+              <svg id="home_img" class="hover:shadow-yellow-500/50 hover:shadow-lg transition-all"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" version="1.1">
+                <g fill="#F5C518">
+                  <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
+                </g>
+                <g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero">
+                  <polygon points="0 18 5 18 5 0 0 0"></polygon>
+                  <path
+                    d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z">
+                  </path>
+                  <path
+                    d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z">
+                  </path>
+                  <path
+                    d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z">
+                  </path>
+                </g>
+              </svg>
+            </div>
+            <p>...</p>
+          </span>
+          <div class="">
+            <div
+              class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80	 rounded-lg	flex flex-row my-8 max-h-24 w-fit">
+              <div id="IMDb-ratingBox" class="font-xs font-semibold	text-white m-2">
+                <p>IMDb RATING</p>
+                <div class="flex h-12">
+                  <div class="flex items-center w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-full text-yellow-300" viewBox="0 0 24 24"
+                      fill="currentColor" role="presentation">
+                      <path
+                        d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="inline-flex flex-col items-start	">
+                    <span class="text-xl font-semibold">8.0
+                      <span>/
+                        <span class="text-gray-200">10</span>
+                      </span>
                     </span>
-                  </span>
-                  <div class="">166K</div>
+                    <div class="">166K</div>
+                  </div>
+                </div>
+              </div>
+              <div id="IMDb-popularityBox" class="font-xs font-semibold	text-white m-2">
+                <p>POPULARITY</p>
+                <div class="flex h-12">
+                  <div class="flex items-center w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-full text-green-500" viewBox="0 0 24 24"
+                      fill="currentColor" role="presentation">
+                      <path
+                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-2.6 0-5-1.3-6.4-3.3l2.8-3.4 1.3 1.5c.4.4 1 .4 1.3 0l2.9-3.2 1.3 1.4c.3.3.8.1.8-.3V8.5c0-.3-.2-.5-.5-.5h-4c-.4 0-.6.5-.3.8l1.3 1.4-2.2 2.5L9 11.3c-.4-.4-1-.4-1.3 0L4.6 15c-.4-.9-.6-1.9-.6-3 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="inline-flex flex-row items-center">
+                    <div class="">3,243</div>
+                    <div class="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class=""
+                        id="iconContext-arrow-drop-down" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path
+                          d="M8.71 12.29L11.3 9.7a.996.996 0 0 1 1.41 0l2.59 2.59c.63.63.18 1.71-.71 1.71H9.41c-.89 0-1.33-1.08-.7-1.71z">
+                        </path>
+                      </svg>938
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div id="IMDb-popularityBox" class="font-xs font-semibold	text-white m-2">
-              <p>POPULARITY</p>
-              <div class="flex h-12">
-                <div class="flex items-center w-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-full text-green-500" viewBox="0 0 24 24"
-                    fill="currentColor" role="presentation">
-                    <path
-                      d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-2.6 0-5-1.3-6.4-3.3l2.8-3.4 1.3 1.5c.4.4 1 .4 1.3 0l2.9-3.2 1.3 1.4c.3.3.8.1.8-.3V8.5c0-.3-.2-.5-.5-.5h-4c-.4 0-.6.5-.3.8l1.3 1.4-2.2 2.5L9 11.3c-.4-.4-1-.4-1.3 0L4.6 15c-.4-.9-.6-1.9-.6-3 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z">
-                    </path>
-                  </svg>
+            <div
+              class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80 rounded-lg flex flex-col lg:w-2/3 w-4/5">
+              <div id="inf-list" class="m-4">
+                <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
+                  <span class="text-xl text-bold text-white mr-2">Director</span>
+                  <span class="text-blue-100">Hayao Miyazaki</span>
                 </div>
-                <div class="inline-flex flex-row items-center">
-                  <div class="">3,243</div>
-                  <div class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class=""
-                      id="iconContext-arrow-drop-down" viewBox="0 0 24 24" fill="currentColor" role="presentation">
-                      <path fill="none" d="M0 0h24v24H0V0z"></path>
-                      <path
-                        d="M8.71 12.29L11.3 9.7a.996.996 0 0 1 1.41 0l2.59 2.59c.63.63.18 1.71-.71 1.71H9.41c-.89 0-1.33-1.08-.7-1.71z">
-                      </path>
-                    </svg>938
+              </div>
+              <div id="inf-list" class="m-4">
+                <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
+                  <span class="text-xl text-bold text-white mr-2">Writers</span>
+                  <div class="flex space-x-4 flex-wrap justify-end">
+                    <span class="text-blue-100">Hayao Miyazaki</span>
+                    <span class="text-blue-100">Cindy Davis</span>
+                  </div>
+                </div>
+              </div>
+              <div id="inf-list" class="m-4">
+                <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
+                  <span class="text-xl text-bold text-white mr-2">Stars</span>
+                  <div class="flex space-x-4 flex-wrap justify-end">
+                    <span class="text-blue-100">Sumi Shimamoto</span>
+                    <span class="text-blue-100">Mahito Tsujimura</span>
+                    <span class="text-blue-100">Hisako Kyôda</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80 rounded-lg flex flex-col w-1/2 md:2/3">
-            <div id="inf-list" class="m-4">
-              <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
-                <span class="text-xl text-bold text-white mr-2">Director</span>
-                <span class="text-blue-100">Hayao Miyazaki</span>
-              </div>
-            </div>
-            <div id="inf-list" class="m-4">
-              <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
-                <span class="text-xl text-bold text-white mr-2">Writers</span>
-                <div class="flex space-x-4 flex-wrap justify-end">
-                  <span class="text-blue-100">Hayao Miyazaki</span>
-                  <span class="text-blue-100">Cindy Davis</span>
-                </div>
-              </div>
-            </div>
-            <div id="inf-list" class="m-4">
-              <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
-                <span class="text-xl text-bold text-white mr-2">Stars</span>
-                <div class="flex space-x-4 flex-wrap justify-end">
-                  <span class="text-blue-100">Sumi Shimamoto</span>
-                  <span class="text-blue-100">Mahito Tsujimura</span>
-                  <span class="text-blue-100">Hisako Kyôda</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="basis-1/2 text-2xl flex flex-col ">
-        <span class="text-7xl mb-8">
-          Plot
-        </span>
-        The world of "Valley of the Wind" is the story of human technology that eventually suffers its own consequences
-        after the development of human technology has reached its peak. However, Miyazaki spares no effort in portraying
-        the story of this work, and the human race in the end times continues to fight and plunder, without any fear
-        that he will repeat the mistakes of the past.
+        <div class="basis-1/2 text-2xl flex flex-col ">
+          <span class="text-7xl mb-8">
+            Plot
+          </span>
+          The world of "Valley of the Wind" is the story of human technology that eventually suffers its own
+          consequences
+          after the development of human technology has reached its peak. However, Miyazaki spares no effort in
+          portraying
+          the story of this work, and the human race in the end times continues to fight and plunder, without any fear
+          that he will repeat the mistakes of the past.
+        </div>
       </div>
     </div>
   </div>
-  <div class="parallax-window" data-parallax="scroll" data-image-src="./assets/Valley_img/1-1.png">
-    <!-- Comments page -->
-    <div class="flex flex-col	w-4/5">
-      <span class="text-7xl text-white flex flex-row mb-4">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="assets/Valley_img/1-3.png">
+  </div>
+  <div class="slide" id="story">
+    <div class="w-4/5">
+      <span class="text-7xl text-black flex flex-row mb-4">
         <p>Story Background </p>
       </span>
       <div class="grid gap-4 grid-cols-2 ">
-        <div class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80	 rounded-lg ">
-          <div id="comments-box" class="m-8">
-            <div id="comments-user" class="border-b-4 border-indigo-500 flex justify-between">
-              <span class="text-xl text-bold text-white ">User</span>
-              <span class="text-blue-100">Dark Eye</span>
-            </div>
-            <div id="comments-comments" class="">
-              <p class="text-white mt-2">
-                Hayao Miyazaki has no equal when it comes to using hand-drawn animation as a form of storytelling, yet
-                often he is being compared to Walt Disney. That is just so unfair, because it becomes apparent by
-                watching Miyazaki's films that he is the superior artist. He really has a gift of thrilling both
-                grownups and children, and Laputa is indeed one awesome ride.
-              </p>
-            </div>
-          </div>
+        <div class="">
+          <h1 class="text-2xl mb-2">
+            A delightful, touching, timeless classic!
+          </h1>
+          <p class="text-ellipsis text-neutral-600">
+            A thousand years ago, the highly developed human civilization polluted the entire earth and created a
+            terrifying weapon called the "Giant God Soldier", constantly waging wars and plundering. Eventually
+            destroyed
+            by the "Seven Days' Fire" caused by giant war robots, it buried its own civilization.
+            The polluted earth has grown a forest called the "Sea of Decay", which continues to grow, giving birth to
+            deadly plants and fungi that can emit miasma. Miasma can kill humans in a matter of minutes, and people can
+            only survive by wearing gas masks at all times.
+          </p>
         </div>
-        <div class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80	 rounded-lg ">
-          <div id="comments-box" class="m-8">
-            <div id="comments-user" class="border-b-4 border-indigo-500 flex justify-between">
-              <span class="text-xl text-bold text-white ">User</span>
-              <span class="text-blue-100">The LittleSongBird</span>
-            </div>
-            <div id="comments-comments" class="">
-              <p class="text-white mt-2">
-                I cannot begin to describe how much I love this film. I love Studio Ghibli, and Castle in the Sky is one
-                of my absolute favourites from them. It has a highly imaginative story for starters, every bit as
-                imaginative as Nausicaa of the Valley of the Wind's. Once again, the animation is magnificent, as is the
-                haunting and poignant music score.
-              </p>
-            </div>
-
+        <div class="card-item " data-card-angle="5" data-card-perspective="500">
+          <div class="card-content">
+            <img src="assets/Valley_img/1-1-1.png" alt=""
+              class="object-cover rounded-lg transition-all drop-shadow-2xl rounded-lg">
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="parallax-window" data-parallax="scroll" data-image-src="assets/Valley_img/1-4.png">
+  </div>
+  <div class="slide" id="story">
+    <div class="w-4/5">
+      <span class="text-7xl text-black flex flex-row mb-4">
+        <p>Story Background </p>
+      </span>
+      <div class="grid gap-4 grid-cols-2 ">
+        <div class="">
+          <h1 class="text-2xl mb-2">
+            A delightful, touching, timeless classic!
+          </h1>
+          <p class="text-ellipsis text-neutral-600">
+            A thousand years ago, the highly developed human civilization polluted the entire earth and created a
+            terrifying weapon called the "Giant God Soldier", constantly waging wars and plundering. Eventually
+            destroyed
+            by the "Seven Days' Fire" caused by giant war robots, it buried its own civilization.
+            The polluted earth has grown a forest called the "Sea of Decay", which continues to grow, giving birth to
+            deadly plants and fungi that can emit miasma. Miasma can kill humans in a matter of minutes, and people can
+            only survive by wearing gas masks at all times.
+          </p>
+        </div>
+        <div class="card-item " data-card-angle="5" data-card-perspective="500">
+          <div class="card-content">
+            <img src="assets/Valley_img/1-1-1.png" alt=""
+              class="object-cover rounded-lg transition-all drop-shadow-2xl rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-window" data-parallax="scroll" data-image-src="assets/Valley_img/1-5.png">
+  </div>
+  <div class="slide" id="story">
+    <div class="w-4/5">
+      <span class="text-7xl text-black flex flex-row mb-4">
+        <p>Story Background </p>
+      </span>
+      <div class="grid gap-4 grid-cols-2 ">
+        <div class="">
+          <h1 class="text-2xl mb-2">
+            A delightful, touching, timeless classic!
+          </h1>
+          <p class="text-ellipsis text-neutral-600">
+            A thousand years ago, the highly developed human civilization polluted the entire earth and created a
+            terrifying weapon called the "Giant God Soldier", constantly waging wars and plundering. Eventually
+            destroyed
+            by the "Seven Days' Fire" caused by giant war robots, it buried its own civilization.
+            The polluted earth has grown a forest called the "Sea of Decay", which continues to grow, giving birth to
+            deadly plants and fungi that can emit miasma. Miasma can kill humans in a matter of minutes, and people can
+            only survive by wearing gas masks at all times.
+          </p>
+        </div>
+        <div class="card-item " data-card-angle="5" data-card-perspective="500">
+          <div class="card-content">
+            <img src="assets/Valley_img/1-1-1.png" alt=""
+              class="object-cover rounded-lg transition-all drop-shadow-2xl rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-window relative" data-parallax="scroll" data-image-src="assets/Totoro_img/Totoro1.jpg">
+    <h1
+      class="absolute bottom-20 text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-orange-400 to-purple-400">
+      Heading</h1>
+  </div>
+  <div class="slide" id="imdb">
+    <div class=" w-4/5">
+      <span
+        class="text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500">
+        Castle in The Sky</span>
+      <div class="flex flex-row">
+        <div class="flex flex-col basis-2/3">
+          <span class="text-7xl text-black flex flex-row mb-4 items-center">
+            <p>In</p>
+            <div class="flex items-center m-4 h-full w-24 ">
+              <svg id="home_img" class="hover:shadow-yellow-500/50 hover:shadow-lg transition-all"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" version="1.1">
+                <g fill="#F5C518">
+                  <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
+                </g>
+                <g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero">
+                  <polygon points="0 18 5 18 5 0 0 0"></polygon>
+                  <path
+                    d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z">
+                  </path>
+                  <path
+                    d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z">
+                  </path>
+                  <path
+                    d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z">
+                  </path>
+                </g>
+              </svg>
+            </div>
+            <p>...</p>
+          </span>
+          <div class="">
+            <div
+              class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80	 rounded-lg	flex flex-row my-8 max-h-24 w-fit">
+              <div id="IMDb-ratingBox" class="font-xs font-semibold	text-white m-2">
+                <p>IMDb RATING</p>
+                <div class="flex h-12">
+                  <div class="flex items-center w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-full text-yellow-300" viewBox="0 0 24 24"
+                      fill="currentColor" role="presentation">
+                      <path
+                        d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="inline-flex flex-col items-start	">
+                    <span class="text-xl font-semibold">8.0
+                      <span>/
+                        <span class="text-gray-200">10</span>
+                      </span>
+                    </span>
+                    <div class="">166K</div>
+                  </div>
+                </div>
+              </div>
+              <div id="IMDb-popularityBox" class="font-xs font-semibold	text-white m-2">
+                <p>POPULARITY</p>
+                <div class="flex h-12">
+                  <div class="flex items-center w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-full text-green-500" viewBox="0 0 24 24"
+                      fill="currentColor" role="presentation">
+                      <path
+                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-2.6 0-5-1.3-6.4-3.3l2.8-3.4 1.3 1.5c.4.4 1 .4 1.3 0l2.9-3.2 1.3 1.4c.3.3.8.1.8-.3V8.5c0-.3-.2-.5-.5-.5h-4c-.4 0-.6.5-.3.8l1.3 1.4-2.2 2.5L9 11.3c-.4-.4-1-.4-1.3 0L4.6 15c-.4-.9-.6-1.9-.6-3 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="inline-flex flex-row items-center">
+                    <div class="">3,243</div>
+                    <div class="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class=""
+                        id="iconContext-arrow-drop-down" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path
+                          d="M8.71 12.29L11.3 9.7a.996.996 0 0 1 1.41 0l2.59 2.59c.63.63.18 1.71-.71 1.71H9.41c-.89 0-1.33-1.08-.7-1.71z">
+                        </path>
+                      </svg>938
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="transition-all bg-neutral-800 hover:shadow-lg hover:shadow-neutral-800/80 rounded-lg flex flex-col lg:w-2/3 w-4/5">
+              <div id="inf-list" class="m-4">
+                <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
+                  <span class="text-xl text-bold text-white mr-2">Director</span>
+                  <span class="text-blue-100">Hayao Miyazaki</span>
+                </div>
+              </div>
+              <div id="inf-list" class="m-4">
+                <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
+                  <span class="text-xl text-bold text-white mr-2">Writers</span>
+                  <div class="flex space-x-4 flex-wrap justify-end">
+                    <span class="text-blue-100">Hayao Miyazaki</span>
+                    <span class="text-blue-100">Cindy Davis</span>
+                  </div>
+                </div>
+              </div>
+              <div id="inf-list" class="m-4">
+                <div id="row" class="border-b-4 border-indigo-500 flex justify-between">
+                  <span class="text-xl text-bold text-white mr-2">Stars</span>
+                  <div class="flex space-x-4 flex-wrap justify-end">
+                    <span class="text-blue-100">Sumi Shimamoto</span>
+                    <span class="text-blue-100">Mahito Tsujimura</span>
+                    <span class="text-blue-100">Hisako Kyôda</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="basis-1/2 text-2xl flex flex-col ">
+          <span class="text-7xl mb-8">
+            Plot
+          </span>
+          <div class="grid grid-rows-4 grid-flow-col gap-8 place-items-center">
+            <p> There is a Totoro in everyone's heart.</p>
+            <p> Childhood will never disappear.</p>
+            <p> Love is </p>
+            <p> the most beautiful possession...</p>
+          </div>
 
 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-window relative" data-parallax="scroll" data-image-src="assets/Totoro_img/Totoro2.png">
+    <h1
+      class="absolute bottom-20 text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-orange-400 to-purple-400">
+      Heading</h1>
+  </div>
+  <div class="slide" id="story">
+    <div class="w-4/5">
+      <span class="text-7xl text-black flex flex-row mb-4">
+        <p>Story Background </p>
+      </span>
+      <div class="grid gap-4 grid-cols-2 ">
+        <div class="">
+          <h1 class="text-2xl mb-2">
+            A delightful, touching, timeless classic!
+          </h1>
+          <p class="text-ellipsis text-neutral-600">
+            A thousand years ago, the highly developed human civilization polluted the entire earth and created a
+            terrifying weapon called the "Giant God Soldier", constantly waging wars and plundering. Eventually
+            destroyed
+            by the "Seven Days' Fire" caused by giant war robots, it buried its own civilization.
+            The polluted earth has grown a forest called the "Sea of Decay", which continues to grow, giving birth to
+            deadly plants and fungi that can emit miasma. Miasma can kill humans in a matter of minutes, and people can
+            only survive by wearing gas masks at all times.
+          </p>
+        </div>
+        <div class="card-item " data-card-angle="5" data-card-perspective="500">
+          <div class="card-content">
+            <img src="assets/Valley_img/1-1-1.png" alt=""
+              class="object-cover rounded-lg transition-all drop-shadow-2xl rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-window relative" data-parallax="scroll" data-image-src="assets/Totoro_img/Totoro3.png">
+    <h1
+      class="absolute bottom-20 text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-orange-400 to-purple-400">
+      Heading</h1>
+  </div>
+  <div class="slide" id="story">
+    <div class="w-4/5">
+      <span class="text-7xl text-black flex flex-row mb-4">
+        <p>Story Background </p>
+      </span>
+      <div class="grid gap-4 grid-cols-2 ">
+        <div class="">
+          <h1 class="text-2xl mb-2">
+            A delightful, touching, timeless classic!
+          </h1>
+          <p class="text-ellipsis text-neutral-600">
+            A thousand years ago, the highly developed human civilization polluted the entire earth and created a
+            terrifying weapon called the "Giant God Soldier", constantly waging wars and plundering. Eventually
+            destroyed
+            by the "Seven Days' Fire" caused by giant war robots, it buried its own civilization.
+            The polluted earth has grown a forest called the "Sea of Decay", which continues to grow, giving birth to
+            deadly plants and fungi that can emit miasma. Miasma can kill humans in a matter of minutes, and people can
+            only survive by wearing gas masks at all times.
+          </p>
+        </div>
+        <div class="card-item " data-card-angle="5" data-card-perspective="500">
+          <div class="card-content">
+            <img src="assets/Valley_img/1-1-1.png" alt=""
+              class="object-cover rounded-lg transition-all drop-shadow-2xl rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax-window relative" data-parallax="scroll" data-image-src="assets/Totoro_img/Totoro4.png">
+    <h1
+      class="absolute bottom-20 text-7xl text-black flex flex-row mb-4 font-bold text-gradient bg-gradient-to-r from-orange-400 to-purple-400">
+      Heading</h1>
+  </div>
+  </div>
 </body>
 
 </html>
